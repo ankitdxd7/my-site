@@ -1,0 +1,15 @@
+name: Build Docker image
+
+on:
+   push:
+     branches: [ master ]
+
+
+ jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+      - name: Build the image
+        run: docker build -t my-site .
